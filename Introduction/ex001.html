@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript pode alterar o conteúdo HTML</title>
+</head>
+<body>
+
+    <h4 id="teste">Antigo conteúdo</h4>
+    
+    <p name="teste2">Meu primeiro paragráfo.....</p>
+
+    <div><p name="teste2">Meu segundo paragráfo.....</p></div>
+    
+
+
+    <button type="button" onclick="mudarConteudoDeH1()">Alterar</button>
+    <button type="button" onclick="mudarCorDeFundo()">Pintar</button>
+    <button type="button" onclick="mudarConteudoDeP1()">Pintar</button>
+    <button type="button" onclick="mudarConteudoDeP2()">Pintar</button>
+
+
+   
+    
+    <script>
+        function mudarConteudoDeH1(){
+            var tag = document.getElementById('teste')
+            tag.innerText == "Antigo conteúdo"?tag.innerText = "Novo conteúdo":tag.innerText = "Antigo conteúdo"
+        }
+
+        function mudarCorDeFundo(){
+            var fundo = document.body;
+            fundo.style.backgroundColor == "white" ? fundo.style.backgroundColor = "Blue": fundo.style.backgroundColor = "white"
+        }
+
+        function mudarConteudoDeP1(){
+            var tag = document.getElementsByName('teste2')[0]
+            tag.innerText = "Alterado o paragráfo...."
+        }
+
+        function mudarConteudoDeP2(){
+            var tag = document.getElementsByTagName('div')[0]
+            tag.style.backgroundColor = "blue"
+        }
+
+    </script>
+</body>
+</html>
