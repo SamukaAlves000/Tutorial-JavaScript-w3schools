@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>O que o JavaScript pode fazer?</h1>
+    <p>JavaScript pode alterar os valores do atributo HTML.
+     Nesse caso, o JavaScript altera o valor do atributo src (origem) de uma imagem.</p>
+     <img id="myImage" src="Imagens/pic_bulboff.gif" style="width:100px" onclick="ligaDesliga()">
+    </br>
+     <input type="button" value="Visualizar/Esconder" id="esc" onclick="escoderAparecer()">
+     <h2 id="msg">Desligada</h2>
+     
+     <script>
+
+         var img = document.getElementById('myImage')
+         var msg = document.getElementById('msg')
+         var esconde = document.getElementById('esc')
+
+         img.addEventListener("click",ligaDesliga())
+
+         function ligaDesliga(){
+             msg.innerText == 'Desligada'?this.ligar():this.desligar()
+         }
+
+         function ligar(){
+             img.src = "Imagens/pic_bulbon.gif"
+             msg.innerText = "Ligada"
+         }
+
+         function desligar(){
+             img.src = "Imagens/pic_bulboff.gif"
+             msg.innerText = "Desligada"
+         }
+
+         function escoderAparecer(){
+
+            msg.innerText == 'Escondida'?this.aparecer():this.escoder()
+             
+         }
+         function escoder(){
+             msg.innerText = "Escondida"
+             img.style.display = "none";
+         }
+
+         function aparecer(){
+             ligar()
+             img.style.display = "block";
+             msg.innerText = "Não escondida"
+         }
+     </script>  
+</body>
+</html>
